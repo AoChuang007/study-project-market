@@ -1,4 +1,4 @@
-import type { IFilterParams } from './api'
+import type { IFilterParams } from '@/api/types/service'
 
 export interface ITrendItem {
   date: string

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, computed, ref } from 'vue'
+import { onMounted, computed } from 'vue'
 import { useUserStore } from '@/stores/useUserStore'
 import MetricsCard from '@/components/charts/MetricsCard.vue'
 import TrendLineChart from '@/components/charts/TrendLineChart.vue'
@@ -10,7 +10,6 @@ import GradeSelect from '@/components/filters/GradeSelect.vue'
 
 const store = useUserStore()
 
-const filters = ref({ dateRange: '7d', grade: '' })
 
 onMounted(() => {
   if (store.aiPlanning === null) {

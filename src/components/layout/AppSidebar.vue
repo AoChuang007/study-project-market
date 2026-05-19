@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+
 import { useRouter, useRoute } from 'vue-router'
 import { useAppStore } from '@/stores/useAppStore'
 import {
@@ -53,12 +53,6 @@ const menuGroups: IMenuGroup[] = [
 ]
 
 const isActive = (path: string) => route.path === path
-
-const activeGroup = computed(() => {
-  if (route.path.startsWith('/user')) return '用户大盘'
-  if (route.path.startsWith('/ops')) return '运营大盘'
-  return null
-})
 
 const navigate = (path: string) => {
   if (path.startsWith('/user')) {
