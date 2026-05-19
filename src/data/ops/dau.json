@@ -1,0 +1,43 @@
+{
+  "summary": [
+    { "label": "今日DAU", "value": 4823, "unit": "人", "trend": 0.08, "trendLabel": "较昨日" },
+    { "label": "本周DAU峰值", "value": 5120, "unit": "人", "trend": 0.12, "trendLabel": "较上周" },
+    { "label": "日均DAU", "value": 4530, "unit": "人", "trend": 0.06, "trendLabel": "较上月" },
+    { "label": "DAU/MAU比", "value": 0.38, "unit": "", "trend": 0.02, "trendLabel": "较上月" }
+  ],
+  "dauTrend": [
+    { "date": "09-01", "value": 4320 }, { "date": "09-02", "value": 4510 },
+    { "date": "09-03", "value": 4390 }, { "date": "09-04", "value": 4680 },
+    { "date": "09-05", "value": 4820 }, { "date": "09-06", "value": 4750 },
+    { "date": "09-07", "value": 4120 }, { "date": "09-08", "value": 4250 },
+    { "date": "09-09", "value": 4560 }, { "date": "09-10", "value": 4610 },
+    { "date": "09-11", "value": 4730 }, { "date": "09-12", "value": 4880 },
+    { "date": "09-13", "value": 5120 }, { "date": "09-14", "value": 4700 },
+    { "date": "09-15", "value": 4920 }, { "date": "09-16", "value": 5020 },
+    { "date": "09-17", "value": 4850 }, { "date": "09-18", "value": 4980 },
+    { "date": "09-19", "value": 5050 }, { "date": "09-20", "value": 4823 },
+    { "date": "09-21", "value": 4680 }, { "date": "09-22", "value": 4750 },
+    { "date": "09-23", "value": 4890 }, { "date": "09-24", "value": 4950 },
+    { "date": "09-25", "value": 5100 }, { "date": "09-26", "value": 5000 },
+    { "date": "09-27", "value": 4850 }, { "date": "09-28", "value": 4620 },
+    { "date": "09-29", "value": 4780 }, { "date": "09-30", "value": 4900 }
+  ],
+  "weeklyActive": [
+    { "date": "第1周", "value": 18200 }, { "date": "第2周", "value": 17800 },
+    { "date": "第3周", "value": 18500 }, { "date": "第4周", "value": 19200 }
+  ],
+  "monthlyActive": [
+    { "date": "01月", "value": 7500 }, { "date": "02月", "value": 6800 },
+    { "date": "03月", "value": 8200 }, { "date": "04月", "value": 9000 },
+    { "date": "05月", "value": 8500 }, { "date": "06月", "value": 9800 },
+    { "date": "07月", "value": 9200 }, { "date": "08月", "value": 6500 },
+    { "date": "09月", "value": 12800 }
+  ],
+  "moduleDauBreakdown": [
+    { "name": "AI智能体", "count": 2850, "ratio": 0.59 },
+    { "name": "数字人聊天", "count": 1680, "ratio": 0.35 },
+    { "name": "答题闯关", "count": 1420, "ratio": 0.29 },
+    { "name": "目标管理", "count": 980, "ratio": 0.20 },
+    { "name": "学习规划", "count": 1250, "ratio": 0.26 }
+  ]
+}

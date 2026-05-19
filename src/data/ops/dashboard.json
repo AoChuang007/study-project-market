@@ -1,0 +1,28 @@
+{
+  "summary": [
+    { "label": "总用户数", "value": 28640, "unit": "人", "trend": 0.12, "trendLabel": "较上月" },
+    { "label": "MAU", "value": 12800, "unit": "人", "trend": 0.08, "trendLabel": "较上月" },
+    { "label": "DAU", "value": 4823, "unit": "人", "trend": 0.08, "trendLabel": "较昨日" },
+    { "label": "人均使用时长", "value": 52, "unit": "分钟", "trend": 0.05, "trendLabel": "较上月" }
+  ],
+  "dauMauTrend": [
+    { "date": "01月", "value": 3200, "value2": 7500 }, { "date": "02月", "value": 2900, "value2": 6800 },
+    { "date": "03月", "value": 3500, "value2": 8200 }, { "date": "04月", "value": 3800, "value2": 9000 },
+    { "date": "05月", "value": 3600, "value2": 8500 }, { "date": "06月", "value": 4100, "value2": 9800 },
+    { "date": "07月", "value": 3900, "value2": 9200 }, { "date": "08月", "value": 2800, "value2": 6500 },
+    { "date": "09月", "value": 4823, "value2": 12800 }
+  ],
+  "userTypeRatio": [
+    { "name": "新用户", "count": 4200, "ratio": 0.15 },
+    { "name": "活跃用户", "count": 12800, "ratio": 0.45 },
+    { "name": "回流用户", "count": 3500, "ratio": 0.12 },
+    { "name": "沉默用户", "count": 8140, "ratio": 0.28 }
+  ],
+  "hourlyActive": [
+    { "name": "06:00", "count": 180, "ratio": 0.04 }, { "name": "08:00", "count": 580, "ratio": 0.12 },
+    { "name": "10:00", "count": 850, "ratio": 0.18 }, { "name": "12:00", "count": 380, "ratio": 0.08 },
+    { "name": "14:00", "count": 720, "ratio": 0.15 }, { "name": "16:00", "count": 650, "ratio": 0.13 },
+    { "name": "18:00", "count": 520, "ratio": 0.11 }, { "name": "20:00", "count": 820, "ratio": 0.17 },
+    { "name": "22:00", "count": 120, "ratio": 0.02 }
+  ]
+}

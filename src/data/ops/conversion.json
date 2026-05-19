@@ -1,0 +1,21 @@
+{
+  "summary": [
+    { "label": "总触达用户", "value": 28640, "unit": "人", "trend": 0.12, "trendLabel": "较上月" },
+    { "label": "AI使用率", "value": 0.68, "unit": "", "trend": 0.05, "trendLabel": "较上月" },
+    { "label": "规划完成率", "value": 0.42, "unit": "", "trend": 0.03, "trendLabel": "较上月" },
+    { "label": "重复使用率", "value": 0.35, "unit": "", "trend": 0.08, "trendLabel": "较上月" }
+  ],
+  "funnelStages": [
+    { "name": "总用户", "count": 28640, "ratio": 1.00 },
+    { "name": "使用过AI", "count": 19475, "ratio": 0.68 },
+    { "name": "完成规划", "count": 12000, "ratio": 0.42 },
+    { "name": "重复使用", "count": 10024, "ratio": 0.35 }
+  ],
+  "bySubjectConversion": [
+    { "name": "数学", "count": 62, "ratio": 0.62 },
+    { "name": "英语", "count": 55, "ratio": 0.55 },
+    { "name": "物理", "count": 48, "ratio": 0.48 },
+    { "name": "语文", "count": 40, "ratio": 0.40 },
+    { "name": "化学", "count": 45, "ratio": 0.45 }
+  ]
+}

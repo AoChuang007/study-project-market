@@ -1,0 +1,39 @@
+{
+  "summary": [
+    { "label": "NPS评分", "value": 72, "unit": "分", "trend": 0.05, "trendLabel": "较上月" },
+    { "label": "好评率", "value": 0.88, "unit": "", "trend": 0.03, "trendLabel": "较上月" },
+    { "label": "反馈总量", "value": 3520, "unit": "条", "trend": 0.15, "trendLabel": "较上月" },
+    { "label": "投诉率", "value": 0.02, "unit": "", "trend": -0.01, "trendLabel": "较上月" }
+  ],
+  "npsTrend": [
+    { "date": "01月", "value": 65 }, { "date": "02月", "value": 67 },
+    { "date": "03月", "value": 68 }, { "date": "04月", "value": 70 },
+    { "date": "05月", "value": 69 }, { "date": "06月", "value": 71 },
+    { "date": "07月", "value": 70 }, { "date": "08月", "value": 72 },
+    { "date": "09月", "value": 72 }
+  ],
+  "satisfactionDistribution": [
+    { "name": "非常满意", "count": 1560, "ratio": 0.44 },
+    { "name": "满意", "count": 1120, "ratio": 0.32 },
+    { "name": "一般", "count": 420, "ratio": 0.12 },
+    { "name": "不满意", "count": 280, "ratio": 0.08 },
+    { "name": "非常不满意", "count": 140, "ratio": 0.04 }
+  ],
+  "featureRating": [
+    { "name": "AI智能体", "count": 85, "ratio": 0.85 },
+    { "name": "数字人互动", "count": 90, "ratio": 0.90 },
+    { "name": "答题闯关", "count": 78, "ratio": 0.78 },
+    { "name": "目标管理", "count": 72, "ratio": 0.72 },
+    { "name": "学习规划", "count": 82, "ratio": 0.82 }
+  ],
+  "wordCloud": [
+    { "name": "好用", "count": 540, "ratio": 0.15 },
+    { "name": "方便", "count": 420, "ratio": 0.12 },
+    { "name": "规划清晰", "count": 380, "ratio": 0.11 },
+    { "name": "提升成绩", "count": 350, "ratio": 0.10 },
+    { "name": "有耐心", "count": 320, "ratio": 0.09 },
+    { "name": "智能推荐", "count": 280, "ratio": 0.08 },
+    { "name": "希望能更快", "count": 210, "ratio": 0.06 },
+    { "name": "题目太少", "count": 180, "ratio": 0.05 }
+  ]
+}

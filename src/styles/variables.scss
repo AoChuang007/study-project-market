@@ -1,0 +1,41 @@
+// 颜色变量
+$color-primary: #409eff;
+$color-success: #67c23a;
+$color-warning: #e6a23c;
+$color-danger: #f56c6c;
+$color-info: #909399;
+
+// 暗色主题
+$dark-bg-primary: #0a0e27;
+$dark-bg-secondary: #111640;
+$dark-bg-card: rgba(16, 24, 80, 0.7);
+$dark-border: rgba(64, 158, 255, 0.15);
+$dark-text-primary: #e0e6f0;
+$dark-text-secondary: #8896b4;
+$dark-accent: #00d4ff;
+
+// 亮色主题
+$light-bg-primary: #f5f7fa;
+$light-bg-secondary: #ffffff;
+$light-bg-card: #ffffff;
+$light-border: #e4e7ed;
+$light-text-primary: #303133;
+$light-text-secondary: #909399;
+
+// 布局
+$sidebar-width: 240px;
+$sidebar-collapsed-width: 64px;
+$header-height: 56px;
+
+// 断点
+$screen-lg: 1440px;
+$screen-xl: 1920px;
+
+// 圆角
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+
+// 阴影
+$shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
+$shadow-dark-card: 0 2px 20px rgba(0, 0, 0, 0.3);

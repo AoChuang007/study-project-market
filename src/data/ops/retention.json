@@ -1,0 +1,21 @@
+{
+  "summary": [
+    { "label": "次日留存", "value": 0.48, "unit": "", "trend": 0.05, "trendLabel": "较上月" },
+    { "label": "7日留存", "value": 0.28, "unit": "", "trend": 0.03, "trendLabel": "较上月" },
+    { "label": "30日留存", "value": 0.15, "unit": "", "trend": 0.02, "trendLabel": "较上月" },
+    { "label": "回流率", "value": 0.12, "unit": "", "trend": 0.04, "trendLabel": "较上月" }
+  ],
+  "retentionCurve": [
+    { "date": "第1天", "value": 1.00 }, { "date": "第3天", "value": 0.62 },
+    { "date": "第5天", "value": 0.45 }, { "date": "第7天", "value": 0.28 },
+    { "date": "第10天", "value": 0.22 }, { "date": "第14天", "value": 0.18 },
+    { "date": "第21天", "value": 0.16 }, { "date": "第30天", "value": 0.15 }
+  ],
+  "channelComparison": [
+    { "channel": "应用商店", "day1": 0.52, "day7": 0.30, "day30": 0.16 },
+    { "channel": "学校推广", "day1": 0.45, "day7": 0.26, "day30": 0.14 },
+    { "channel": "社交媒体", "day1": 0.38, "day7": 0.20, "day30": 0.10 },
+    { "channel": "口碑推荐", "day1": 0.55, "day7": 0.33, "day30": 0.18 },
+    { "channel": "搜索引擎", "day1": 0.42, "day7": 0.22, "day30": 0.12 }
+  ]
+}

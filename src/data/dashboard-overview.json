@@ -1,0 +1,48 @@
+{
+  "summary": [
+    { "label": "总用户数", "value": 28640, "unit": "人", "trend": 0.12, "trendLabel": "较上月" },
+    { "label": "今日DAU", "value": 4823, "unit": "人", "trend": 0.08, "trendLabel": "较昨日" },
+    { "label": "AI使用率", "value": 0.68, "unit": "", "trend": 0.15, "trendLabel": "较上月" },
+    { "label": "人均活跃时长", "value": 52, "unit": "分钟", "trend": -0.03, "trendLabel": "较上周" }
+  ],
+  "activeTrend": [
+    { "date": "09-01", "value": 4320 }, { "date": "09-02", "value": 4510 },
+    { "date": "09-03", "value": 4390 }, { "date": "09-04", "value": 4680 },
+    { "date": "09-05", "value": 4820 }, { "date": "09-06", "value": 4750 },
+    { "date": "09-07", "value": 4120 }, { "date": "09-08", "value": 4250 },
+    { "date": "09-09", "value": 4560 }, { "date": "09-10", "value": 4610 },
+    { "date": "09-11", "value": 4730 }, { "date": "09-12", "value": 4880 },
+    { "date": "09-13", "value": 4823 }, { "date": "09-14", "value": 4700 }
+  ],
+  "aiDistribution": [
+    { "name": "学习规划", "count": 12500, "ratio": 0.43 },
+    { "name": "智能答疑", "count": 8200, "ratio": 0.28 },
+    { "name": "知识推荐", "count": 5400, "ratio": 0.19 },
+    { "name": "错题分析", "count": 2900, "ratio": 0.10 }
+  ],
+  "digitalHumanRanking": [
+    { "rank": 1, "name": "数学答疑", "value": 3420, "change": 0.12 },
+    { "rank": 2, "name": "英语口语", "value": 2980, "change": 0.05 },
+    { "rank": 3, "name": "物理实验", "value": 2150, "change": -0.03 },
+    { "rank": 4, "name": "化学讲解", "value": 1890, "change": 0.18 },
+    { "rank": 5, "name": "历史讨论", "value": 1340, "change": 0.08 }
+  ],
+  "subjectHeat": [
+    { "name": "数学", "count": 8230, "ratio": 0.28 },
+    { "name": "英语", "count": 6540, "ratio": 0.22 },
+    { "name": "物理", "count": 4210, "ratio": 0.15 },
+    { "name": "语文", "count": 3890, "ratio": 0.13 },
+    { "name": "化学", "count": 3210, "ratio": 0.11 },
+    { "name": "其他", "count": 3160, "ratio": 0.11 }
+  ],
+  "realtimeActivity": [
+    { "date": "08:00", "value": 120 }, { "date": "09:00", "value": 280 },
+    { "date": "10:00", "value": 420 }, { "date": "11:00", "value": 380 },
+    { "date": "12:00", "value": 150 }, { "date": "13:00", "value": 180 },
+    { "date": "14:00", "value": 410 }, { "date": "15:00", "value": 350 },
+    { "date": "16:00", "value": 320 }, { "date": "17:00", "value": 280 },
+    { "date": "18:00", "value": 220 }, { "date": "19:00", "value": 510 },
+    { "date": "20:00", "value": 580 }, { "date": "21:00", "value": 430 },
+    { "date": "22:00", "value": 180 }, { "date": "23:00", "value": 80 }
+  ]
+}

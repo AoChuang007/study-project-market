@@ -1,0 +1,31 @@
+{
+  "summary": [
+    { "label": "总答题数", "value": 125600, "unit": "题", "trend": 0.20, "trendLabel": "较上月" },
+    { "label": "正确率", "value": 0.78, "unit": "", "trend": 0.03, "trendLabel": "较上月" },
+    { "label": "覆盖知识点", "value": 342, "unit": "个", "trend": 0.15, "trendLabel": "较上月" },
+    { "label": "参与用户", "value": 2840, "unit": "人", "trend": 0.10, "trendLabel": "较上月" }
+  ],
+  "knowledgeCorrectRate": [
+    { "name": "函数", "count": 92, "ratio": 0.92 },
+    { "name": "几何", "count": 78, "ratio": 0.78 },
+    { "name": "概率统计", "count": 85, "ratio": 0.85 },
+    { "name": "力学", "count": 72, "ratio": 0.72 },
+    { "name": "电磁学", "count": 68, "ratio": 0.68 },
+    { "name": "有机化学", "count": 75, "ratio": 0.75 },
+    { "name": "语法", "count": 80, "ratio": 0.80 },
+    { "name": "阅读理解", "count": 74, "ratio": 0.74 }
+  ],
+  "dailyTrend": [
+    { "date": "09-08", "value": 420 }, { "date": "09-09", "value": 450 },
+    { "date": "09-10", "value": 480 }, { "date": "09-11", "value": 520 },
+    { "date": "09-12", "value": 490 }, { "date": "09-13", "value": 560 },
+    { "date": "09-14", "value": 380 }
+  ],
+  "errorRanking": [
+    { "rank": 1, "name": "电磁感应", "value": 450, "change": 12 },
+    { "rank": 2, "name": "立体几何", "value": 420, "change": -5 },
+    { "rank": 3, "name": "虚拟语气", "value": 380, "change": 8 },
+    { "rank": 4, "name": "化学反应速率", "value": 350, "change": 15 },
+    { "rank": 5, "name": "动量守恒", "value": 320, "change": -3 }
+  ]
+}

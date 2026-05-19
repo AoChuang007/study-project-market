@@ -1,0 +1,31 @@
+{
+  "summary": [
+    { "label": "总会话数", "value": 24560, "unit": "次", "trend": 0.22, "trendLabel": "较上月" },
+    { "label": "满意度评分", "value": 0.92, "unit": "", "trend": 0.03, "trendLabel": "较上月" },
+    { "label": "平均对话轮次", "value": 8.5, "unit": "轮", "trend": 0.06, "trendLabel": "较上月" },
+    { "label": "活跃用户", "value": 1530, "unit": "人", "trend": 0.15, "trendLabel": "较上月" }
+  ],
+  "sessionTrend": [
+    { "date": "09-01", "value": 780 }, { "date": "09-02", "value": 820 },
+    { "date": "09-03", "value": 850 }, { "date": "09-04", "value": 810 },
+    { "date": "09-05", "value": 890 }, { "date": "09-06", "value": 760 },
+    { "date": "09-07", "value": 620 }, { "date": "09-08", "value": 700 },
+    { "date": "09-09", "value": 830 }, { "date": "09-10", "value": 870 },
+    { "date": "09-11", "value": 910 }, { "date": "09-12", "value": 880 },
+    { "date": "09-13", "value": 850 }, { "date": "09-14", "value": 790 }
+  ],
+  "topicDistribution": [
+    { "name": "学科答疑", "count": 10200, "ratio": 0.42 },
+    { "name": "学习方法", "count": 5400, "ratio": 0.22 },
+    { "name": "考试辅导", "count": 4200, "ratio": 0.17 },
+    { "name": "心理陪伴", "count": 2800, "ratio": 0.11 },
+    { "name": "其他话题", "count": 1960, "ratio": 0.08 }
+  ],
+  "emotionRadar": [
+    { "name": "积极", "count": 68, "ratio": 0.68 },
+    { "name": "中性", "count": 22, "ratio": 0.22 },
+    { "name": "困惑", "count": 6, "ratio": 0.06 },
+    { "name": "焦虑", "count": 3, "ratio": 0.03 },
+    { "name": "消极", "count": 1, "ratio": 0.01 }
+  ]
+}
