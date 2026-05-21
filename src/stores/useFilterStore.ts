@@ -34,6 +34,7 @@ export const useFilterStore = defineStore('filter', () => {
 
   /** 当前路由下应显示的筛选器列表 */
   const visibleFilters = computed(() => {
+    if (route.path === '/') return []
     if (route.path.startsWith('/user')) {
       return ['dateRange', 'grade', 'subject']
     }
