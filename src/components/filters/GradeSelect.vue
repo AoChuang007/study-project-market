@@ -1,25 +1,33 @@
 <script setup lang="ts">
+const props = withDefaults(defineProps<{
+  modelValue?: string
+}>(), {
+  modelValue: '',
+})
+
 const emit = defineEmits<{
-  change: [value: string]
+  'update:modelValue': [value: string]
 }>()
 
 const options = [
   { label: '全部年级', value: '' },
-  { label: '初一', value: 'grade7' },
-  { label: '初二', value: 'grade8' },
-  { label: '初三', value: 'grade9' },
-  { label: '高一', value: 'grade10' },
-  { label: '高二', value: 'grade11' },
-  { label: '高三', value: 'grade12' },
+  { label: '大一', value: 'freshman' },
+  { label: '大二', value: 'sophomore' },
+  { label: '大三', value: 'junior' },
+  { label: '大四', value: 'senior' },
+  { label: '研一', value: 'master1' },
+  { label: '研二', value: 'master2' },
+  { label: '研三', value: 'master3' },
 ]
 
 const handleChange = (val: string) => {
-  emit('change', val)
+  emit('update:modelValue', val)
 }
 </script>
 
 <template>
   <el-select
+    :model-value="props.modelValue"
     placeholder="选择年级"
     size="small"
     style="width: 140px"

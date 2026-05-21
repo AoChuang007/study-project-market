@@ -1,9 +1,13 @@
 <script setup lang="ts">
-const emit = defineEmits<{
-  change: [value: string]
-}>()
+const props = withDefaults(defineProps<{
+  modelValue?: string
+}>(), {
+  modelValue: '7d',
+})
 
-const currentValue = '7d'
+const emit = defineEmits<{
+  'update:modelValue': [value: string]
+}>()
 
 const options = [
   { label: '今日', value: 'today' },
@@ -13,12 +17,12 @@ const options = [
 ]
 
 const handleChange = (val: string) => {
-  emit('change', val)
+  emit('update:modelValue', val)
 }
 </script>
 
 <template>
-  <el-radio-group :model-value="currentValue" size="small" @change="handleChange">
+  <el-radio-group :model-value="props.modelValue" size="small" @change="handleChange">
     <el-radio-button v-for="opt in options" :key="opt.value" :value="opt.value">
       {{ opt.label }}
     </el-radio-button>

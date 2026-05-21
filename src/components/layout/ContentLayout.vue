@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AppSidebar from './AppSidebar.vue'
 import AppHeader from './AppHeader.vue'
+import AppFilterBar from './AppFilterBar.vue'
 </script>
 
 <template>
@@ -8,6 +9,7 @@ import AppHeader from './AppHeader.vue'
     <AppSidebar class="content-layout__sidebar" />
     <div class="content-layout__right">
       <AppHeader />
+      <AppFilterBar />
       <main class="content-layout__main">
         <slot />
       </main>

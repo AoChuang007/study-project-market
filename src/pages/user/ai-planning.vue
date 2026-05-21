@@ -5,11 +5,8 @@ import MetricsCard from '@/components/charts/MetricsCard.vue'
 import TrendLineChart from '@/components/charts/TrendLineChart.vue'
 import PieDistChart from '@/components/charts/PieDistChart.vue'
 import HeatmapChart from '@/components/charts/HeatmapChart.vue'
-import DateRangePicker from '@/components/filters/DateRangePicker.vue'
-import GradeSelect from '@/components/filters/GradeSelect.vue'
 
 const store = useUserStore()
-
 
 onMounted(() => {
   if (store.aiPlanning === null) {
@@ -26,11 +23,6 @@ const hourlyHeatmap = computed(() => store.aiPlanning?.hourlyHeatmap ?? [])
 
 <template>
   <div class="page">
-    <div class="page__filters">
-      <DateRangePicker @change="() => {}" />
-      <GradeSelect @change="() => {}" />
-    </div>
-
     <div class="page__metrics">
       <MetricsCard
         v-for="(card, i) in summary"
@@ -88,13 +80,6 @@ const hourlyHeatmap = computed(() => store.aiPlanning?.hourlyHeatmap ?? [])
 
 <style lang="scss" scoped>
 .page {
-  &__filters {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 20px;
-    align-items: center;
-  }
-
   &__metrics {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

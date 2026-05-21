@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { onMounted, computed, ref } from 'vue'
+import { onMounted, computed } from 'vue'
 import { useOpsStore } from '@/stores/useOpsStore'
 import MetricsCard from '@/components/charts/MetricsCard.vue'
 import TrendLineChart from '@/components/charts/TrendLineChart.vue'
 import BarCompareChart from '@/components/charts/BarCompareChart.vue'
-import DateRangePicker from '@/components/filters/DateRangePicker.vue'
 
 const store = useOpsStore()
-const range = ref('30d')
 
 onMounted(() => {
   if (store.dau === null) {
@@ -24,10 +22,6 @@ const moduleDauBreakdown = computed(() => store.dau?.moduleDauBreakdown ?? [])
 
 <template>
   <div class="page">
-    <div class="page__filters">
-      <DateRangePicker @change="(v: string) => { range = v }" />
-    </div>
-
     <div class="page__metrics">
       <MetricsCard
         v-for="(card, i) in summary"
@@ -81,13 +75,6 @@ const moduleDauBreakdown = computed(() => store.dau?.moduleDauBreakdown ?? [])
 
 <style lang="scss" scoped>
 .page {
-  &__filters {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 20px;
-    align-items: center;
-  }
-
   &__metrics {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
