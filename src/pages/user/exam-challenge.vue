@@ -17,7 +17,7 @@ onMounted(() => {
 const summary = computed(() => store.examChallenge?.summary ?? [])
 const knowledgeCorrectRate = computed(() => store.examChallenge?.knowledgeCorrectRate ?? [])
 const dailyTrend = computed(() => store.examChallenge?.dailyTrend ?? [])
-const errorRanking = computed(() => store.examChallenge?.errorRanking ?? [])
+const clearRanking = computed(() => store.examChallenge?.clearRanking ?? [])
 </script>
 
 <template>
@@ -53,22 +53,77 @@ const errorRanking = computed(() => store.examChallenge?.errorRanking ?? [])
         />
       </div>
       <div class="page__card">
-        <h3>错题排行</h3>
+        <h3>通关率排行</h3>
         <DataTable
-          :data="errorRanking as unknown as Record<string, unknown>[]"
+          :data="clearRanking as unknown as Record<string, unknown>[]"
           :loading="store.loading"
           :error="store.error"
         >
           <el-table-column prop="rank" label="排名" width="80" />
-          <el-table-column prop="name" label="知识点" />
-          <el-table-column prop="value" label="错题数" width="120" />
-          <el-table-column prop="change" label="变化" width="100">
+          <el-table-column prop="userName" label="用户名" width="120" />
+          <el-table-column label="第1关" width="60">
             <template #default="{ row }">
-              <span :style="{ color: (row.change as number) > 0 ? '#f56c6c' : '#67c23a' }">
-                {{ (row.change as number) > 0 ? '+' : '' }}{{ row.change }}
+              <span :style="{ color: (row.levelMatrix as boolean[])[0] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
+                {{ (row.levelMatrix as boolean[])[0] ? '✓' : '✗' }}
               </span>
             </template>
           </el-table-column>
+          <el-table-column label="第2关" width="60">
+            <template #default="{ row }">
+              <span :style="{ color: (row.levelMatrix as boolean[])[1] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
+                {{ (row.levelMatrix as boolean[])[1] ? '✓' : '✗' }}
+              </span>
+            </template>
+          </el-table-column>
+          <el-table-column label="第3关" width="60">
+            <template #default="{ row }">
+              <span :style="{ color: (row.levelMatrix as boolean[])[2] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
+                {{ (row.levelMatrix as boolean[])[2] ? '✓' : '✗' }}
+              </span>
+            </template>
+          </el-table-column>
+          <el-table-column label="第4关" width="60">
+            <template #default="{ row }">
+              <span :style="{ color: (row.levelMatrix as boolean[])[3] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
+                {{ (row.levelMatrix as boolean[])[3] ? '✓' : '✗' }}
+              </span>
+            </template>
+          </el-table-column>
+          <el-table-column label="第5关" width="60">
+            <template #default="{ row }">
+              <span :style="{ color: (row.levelMatrix as boolean[])[4] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
+                {{ (row.levelMatrix as boolean[])[4] ? '✓' : '✗' }}
+              </span>
+            </template>
+          </el-table-column>
+          <el-table-column label="第6关" width="60">
+            <template #default="{ row }">
+              <span :style="{ color: (row.levelMatrix as boolean[])[5] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
+                {{ (row.levelMatrix as boolean[])[5] ? '✓' : '✗' }}
+              </span>
+            </template>
+          </el-table-column>
+          <el-table-column label="第7关" width="60">
+            <template #default="{ row }">
+              <span :style="{ color: (row.levelMatrix as boolean[])[6] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
+                {{ (row.levelMatrix as boolean[])[6] ? '✓' : '✗' }}
+              </span>
+            </template>
+          </el-table-column>
+          <el-table-column label="第8关" width="60">
+            <template #default="{ row }">
+              <span :style="{ color: (row.levelMatrix as boolean[])[7] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
+                {{ (row.levelMatrix as boolean[])[7] ? '✓' : '✗' }}
+              </span>
+            </template>
+          </el-table-column>
+          <el-table-column prop="cleared" label="通过数" width="100" />
+          <el-table-column label="通关率" width="100">
+            <template #default="{ row }">
+              {{ Math.round((row.clearRate as number) * 100) }}%
+            </template>
+          </el-table-column>
+          <el-table-column prop="change" label="较昨日" width="80" />
         </DataTable>
       </div>
     </div>

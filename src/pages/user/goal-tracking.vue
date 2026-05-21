@@ -13,7 +13,7 @@ onMounted(() => {
 })
 
 const summary = computed(() => store.goalTracking?.summary ?? [])
-const goalList = computed(() => store.goalTracking?.goalList ?? [])
+const subjectGoals = computed(() => store.goalTracking?.subjectGoals ?? [])
 const completionDistribution = computed(() => store.goalTracking?.completionDistribution ?? [])
 </script>
 
@@ -40,21 +40,21 @@ const completionDistribution = computed(() => store.goalTracking?.completionDist
         />
       </div>
       <div class="page__card">
-        <h3>目标进度列表</h3>
+        <h3>学科目标进度</h3>
         <div v-if="store.loading" class="page__skeleton">
-          <el-skeleton animated :rows="7" />
+          <el-skeleton animated :rows="6" />
         </div>
         <div v-else-if="store.error" class="page__error">{{ store.error }}</div>
         <div v-else class="page__goal-list">
-          <div v-for="goal in goalList" :key="goal.id" class="page__goal-item">
+          <div v-for="item in subjectGoals" :key="item.subject" class="page__goal-item">
             <div class="page__goal-header">
-              <span class="page__goal-name">{{ goal.name }}</span>
-              <span class="page__goal-value">{{ goal.current }}/{{ goal.target }}</span>
+              <span class="page__goal-name">{{ item.subject }}</span>
+              <span class="page__goal-value">{{ item.completedCount }}/{{ item.totalCount }}</span>
             </div>
             <el-progress
-              :percentage="Math.round(goal.progress * 100)"
+              :percentage="Math.round(item.progress * 100)"
               :stroke-width="8"
-              :color="goal.progress >= 0.8 ? '#67c23a' : goal.progress >= 0.5 ? '#e6a23c' : '#409eff'"
+              :color="item.progress >= 0.8 ? '#67c23a' : item.progress >= 0.5 ? '#e6a23c' : '#409eff'"
             />
           </div>
         </div>

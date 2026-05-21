@@ -21,11 +21,14 @@
     { "date": "09-12", "value": 490 }, { "date": "09-13", "value": 560 },
     { "date": "09-14", "value": 380 }
   ],
-  "errorRanking": [
-    { "rank": 1, "name": "电磁感应", "value": 450, "change": 12 },
-    { "rank": 2, "name": "立体几何", "value": 420, "change": -5 },
-    { "rank": 3, "name": "虚拟语气", "value": 380, "change": 8 },
-    { "rank": 4, "name": "化学反应速率", "value": 350, "change": 15 },
-    { "rank": 5, "name": "动量守恒", "value": 320, "change": -3 }
+  "clearRanking": [
+    { "rank": 1, "userName": "李华", "levelMatrix": [true, true, true, true, true, true, true, true], "cleared": 8, "clearRate": 1.0, "change": 0 },
+    { "rank": 2, "userName": "张明", "levelMatrix": [true, true, true, true, true, true, true, false], "cleared": 7, "clearRate": 0.875, "change": 1 },
+    { "rank": 3, "userName": "王芳", "levelMatrix": [true, true, true, true, true, true, false, false], "cleared": 6, "clearRate": 0.75, "change": -1 },
+    { "rank": 4, "userName": "赵磊", "levelMatrix": [true, true, true, true, true, false, false, false], "cleared": 5, "clearRate": 0.625, "change": 2 },
+    { "rank": 5, "userName": "陈静", "levelMatrix": [true, true, true, true, false, false, false, false], "cleared": 4, "clearRate": 0.5, "change": -1 },
+    { "rank": 6, "userName": "刘洋", "levelMatrix": [true, true, true, true, false, false, false, false], "cleared": 4, "clearRate": 0.5, "change": -1 },
+    { "rank": 7, "userName": "孙悦", "levelMatrix": [true, true, true, false, false, false, false, false], "cleared": 3, "clearRate": 0.375, "change": 3 },
+    { "rank": 8, "userName": "周强", "levelMatrix": [true, true, false, false, false, false, false, false], "cleared": 2, "clearRate": 0.25, "change": 0 }
   ]
 }

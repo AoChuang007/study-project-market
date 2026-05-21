@@ -42,6 +42,28 @@ export interface IRankingItem {
   change: number
 }
 
+/** 通关率排行 — 用户×关卡通关矩阵 */
+export interface ILevelClearItem {
+  rank: number
+  userName: string
+  /** 8关布尔数组，true=通过 */
+  levelMatrix: boolean[]
+  /** 已通关数 */
+  cleared: number
+  /** 通关率 (0-1) */
+  clearRate: number
+  /** 较昨日排名变化 */
+  change: number
+}
+
+/** 学科目标进度 */
+export interface ISubjectGoalItem {
+  subject: string
+  progress: number
+  completedCount: number
+  totalCount: number
+}
+
 export interface IDashboardOverview {
   summary: ISummaryCard[]
   activeTrend: ITrendItem[]
@@ -74,7 +96,7 @@ export interface IDigitalHumanData {
 
 export interface IGoalTrackingData {
   summary: ISummaryCard[]
-  goalList: IProgressItem[]
+  subjectGoals: ISubjectGoalItem[]
   completionDistribution: IDistributionItem[]
 }
 
@@ -88,7 +110,7 @@ export interface IExamChallengeData {
   summary: ISummaryCard[]
   knowledgeCorrectRate: IDistributionItem[]
   dailyTrend: ITrendItem[]
-  errorRanking: IRankingItem[]
+  clearRanking: ILevelClearItem[]
 }
 
 export interface IOpsDashboard {
