@@ -3,6 +3,7 @@ import { onMounted, computed } from 'vue'
 import { useUserStore } from '@/stores/useUserStore'
 import MetricsCard from '@/components/charts/MetricsCard.vue'
 import HeatmapChart from '@/components/charts/HeatmapChart.vue'
+import TrendLineChart from '@/components/charts/TrendLineChart.vue'
 import DataTable from '@/components/common/DataTable.vue'
 
 const store = useUserStore()
@@ -16,6 +17,15 @@ onMounted(() => {
 const summary = computed(() => store.learningPlan?.summary ?? [])
 const calendarHeatmap = computed(() => store.learningPlan?.calendarHeatmap ?? [])
 const dailyTasks = computed(() => store.learningPlan?.dailyTasks ?? [])
+
+/** 将每日任务数据转为趋势图格式，计划数 vs 完成数 */
+const dailyTaskTrend = computed(() =>
+  dailyTasks.value.map((t) => ({
+    date: t.date,
+    value: t.planned,
+    value2: t.completed,
+  }))
+)
 </script>
 
 <template>
@@ -41,18 +51,28 @@ const dailyTasks = computed(() => store.learningPlan?.dailyTasks ?? [])
       </div>
     </div>
 
-    <div class="page__card">
-      <h3>每日任务完成明细</h3>
-      <DataTable
-        :data="dailyTasks as unknown as Record<string, unknown>[]"
-        :loading="store.loading"
-        :error="store.error"
-      >
-        <el-table-column prop="date" label="日期" width="120" />
-        <el-table-column prop="planned" label="计划数" width="100" />
-        <el-table-column prop="completed" label="完成数" width="100" />
-        <el-table-column prop="onTime" label="按时完成" width="100" />
-      </DataTable>
+    <div class="page__charts">
+      <div class="page__card">
+        <h3>每日任务完成明细</h3>
+        <DataTable
+          :data="dailyTasks as unknown as Record<string, unknown>[]"
+          :loading="store.loading"
+          :error="store.error"
+        >
+          <el-table-column prop="date" label="日期" width="120" />
+          <el-table-column prop="planned" label="计划数" width="100" />
+          <el-table-column prop="completed" label="完成数" width="100" />
+          <el-table-column prop="onTime" label="按时完成" width="100" />
+        </DataTable>
+      </div>
+      <div class="page__card">
+        <h3>计划 vs 完成趋势</h3>
+        <TrendLineChart
+          :data="dailyTaskTrend"
+          :loading="store.loading"
+          :error="store.error"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -67,6 +87,9 @@ const dailyTasks = computed(() => store.learningPlan?.dailyTasks ?? [])
   }
 
   &__charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
     margin-bottom: 24px;
   }
 

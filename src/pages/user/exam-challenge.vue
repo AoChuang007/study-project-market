@@ -4,7 +4,7 @@ import { useUserStore } from '@/stores/useUserStore'
 import MetricsCard from '@/components/charts/MetricsCard.vue'
 import BarCompareChart from '@/components/charts/BarCompareChart.vue'
 import TrendLineChart from '@/components/charts/TrendLineChart.vue'
-import DataTable from '@/components/common/DataTable.vue'
+import PieDistChart from '@/components/charts/PieDistChart.vue'
 
 const store = useUserStore()
 
@@ -18,6 +18,20 @@ const summary = computed(() => store.examChallenge?.summary ?? [])
 const knowledgeCorrectRate = computed(() => store.examChallenge?.knowledgeCorrectRate ?? [])
 const dailyTrend = computed(() => store.examChallenge?.dailyTrend ?? [])
 const clearRanking = computed(() => store.examChallenge?.clearRanking ?? [])
+
+/** 按通关率分段统计分布 */
+const clearRateDistribution = computed(() => {
+  const total = clearRanking.value.length
+  if (total === 0) return []
+  const full = clearRanking.value.filter((r) => r.clearRate === 1).length
+  const half = clearRanking.value.filter((r) => r.clearRate >= 0.5 && r.clearRate < 1).length
+  const low = clearRanking.value.filter((r) => r.clearRate < 0.5).length
+  return [
+    { name: '100%通关', count: full, ratio: full / total },
+    { name: '50%~99%通关', count: half, ratio: half / total },
+    { name: '低于50%通关', count: low, ratio: low / total },
+  ]
+})
 </script>
 
 <template>
@@ -53,78 +67,13 @@ const clearRanking = computed(() => store.examChallenge?.clearRanking ?? [])
         />
       </div>
       <div class="page__card">
-        <h3>通关率排行</h3>
-        <DataTable
-          :data="clearRanking as unknown as Record<string, unknown>[]"
+        <h3>通关率分布</h3>
+        <PieDistChart
+          :data="clearRateDistribution"
+          type="ring"
           :loading="store.loading"
           :error="store.error"
-        >
-          <el-table-column prop="rank" label="排名" width="80" />
-          <el-table-column prop="userName" label="用户名" width="120" />
-          <el-table-column label="第1关" width="60">
-            <template #default="{ row }">
-              <span :style="{ color: (row.levelMatrix as boolean[])[0] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
-                {{ (row.levelMatrix as boolean[])[0] ? '✓' : '✗' }}
-              </span>
-            </template>
-          </el-table-column>
-          <el-table-column label="第2关" width="60">
-            <template #default="{ row }">
-              <span :style="{ color: (row.levelMatrix as boolean[])[1] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
-                {{ (row.levelMatrix as boolean[])[1] ? '✓' : '✗' }}
-              </span>
-            </template>
-          </el-table-column>
-          <el-table-column label="第3关" width="60">
-            <template #default="{ row }">
-              <span :style="{ color: (row.levelMatrix as boolean[])[2] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
-                {{ (row.levelMatrix as boolean[])[2] ? '✓' : '✗' }}
-              </span>
-            </template>
-          </el-table-column>
-          <el-table-column label="第4关" width="60">
-            <template #default="{ row }">
-              <span :style="{ color: (row.levelMatrix as boolean[])[3] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
-                {{ (row.levelMatrix as boolean[])[3] ? '✓' : '✗' }}
-              </span>
-            </template>
-          </el-table-column>
-          <el-table-column label="第5关" width="60">
-            <template #default="{ row }">
-              <span :style="{ color: (row.levelMatrix as boolean[])[4] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
-                {{ (row.levelMatrix as boolean[])[4] ? '✓' : '✗' }}
-              </span>
-            </template>
-          </el-table-column>
-          <el-table-column label="第6关" width="60">
-            <template #default="{ row }">
-              <span :style="{ color: (row.levelMatrix as boolean[])[5] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
-                {{ (row.levelMatrix as boolean[])[5] ? '✓' : '✗' }}
-              </span>
-            </template>
-          </el-table-column>
-          <el-table-column label="第7关" width="60">
-            <template #default="{ row }">
-              <span :style="{ color: (row.levelMatrix as boolean[])[6] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
-                {{ (row.levelMatrix as boolean[])[6] ? '✓' : '✗' }}
-              </span>
-            </template>
-          </el-table-column>
-          <el-table-column label="第8关" width="60">
-            <template #default="{ row }">
-              <span :style="{ color: (row.levelMatrix as boolean[])[7] ? '#67c23a' : '#f56c6c', fontWeight: 'bold' }">
-                {{ (row.levelMatrix as boolean[])[7] ? '✓' : '✗' }}
-              </span>
-            </template>
-          </el-table-column>
-          <el-table-column prop="cleared" label="通过数" width="100" />
-          <el-table-column label="通关率" width="100">
-            <template #default="{ row }">
-              {{ Math.round((row.clearRate as number) * 100) }}%
-            </template>
-          </el-table-column>
-          <el-table-column prop="change" label="较昨日" width="80" />
-        </DataTable>
+        />
       </div>
     </div>
   </div>
